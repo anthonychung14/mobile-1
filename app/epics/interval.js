@@ -12,7 +12,7 @@ export const intervalEpic = (action$, store) =>
         .switchMap(() =>
             source
                 .map(x => ({ type: 'UPDATE_DATA', payload: x }))
-                .takeUntil(action$.ofType('PING'))
+                .takeUntil(action$.ofType('INCREMENT'))
         )
 
 
