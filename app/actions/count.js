@@ -1,1 +1,4 @@
-export const increment = () => ({ type: 'INCREMENT' });
+export const increment = () => {
+    console.log('hi there');
+    return ({ type: 'PING' })
+}
