@@ -3,10 +3,13 @@
 import Immutable from 'immutable';
 import { Platform } from 'react-native';
 
-import { createEpicMiddleware } from 'redux-observable';
 import { createStore, applyMiddleware, compose } from 'redux';
-import { rootReducer }  from './reducers';
+
+import { createEpicMiddleware } from 'redux-observable';
 import { rootEpic } from './epics';
+import thunk from 'redux-thunk';
+
+import { rootReducer }  from './reducers';
 
 const epicMiddleware = createEpicMiddleware(rootEpic);
 let composeEnhancers = compose;
@@ -24,8 +27,12 @@ let composeEnhancers = compose;
 //     store = createStore(rootReducer, compose(...enhancers));
 // }
 
+let reduxDevTools = window.devToolsExtension ? window.devToolsExtension() : (f) => f;
+
 const enhancer = composeEnhancers(
-    applyMiddleware(epicMiddleware)
+    applyMiddleware(thunk),
+    applyMiddleware(epicMiddleware),
+    reduxDevTools
 );
 
 export default function configureStore(initialState) {

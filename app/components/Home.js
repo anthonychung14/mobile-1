@@ -2,8 +2,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
+import Ingest from './Ingest';
+
 type Props = {
   increment: Function,
+  interval: Function,
   count: number,
 };
 
@@ -19,14 +22,13 @@ export default class Home extends React.Component {
 		this.setState(nextState);
 	}
 
-	dec = (e) => {
-		const nextState = { count: this.state.count - 1 };
-		console.log('this.state', this.state)
-		this.setState(nextState);
+	interval = (e) => {
+		console.log('------- INTERVAL START ------ ')
+		this.props.interval();
 	}
 
 	render() {
-		const { inc, dec } = this;
+		const { inc, interval } = this;
 		const { increment } = this.props;
 		return (
 		  <View style={styles.container}>
@@ -34,15 +36,15 @@ export default class Home extends React.Component {
 			<Text>Number: { this.state.count }</Text>
 			<Button
 			  onPress={ increment }
-			  title="ADD"
+			  title="Stop Interval"
 			  color="#841584"
 			/>
 			<Button
-			  onPress={ dec }
-			  title="SUBTRACT"
+			  onPress={ interval }
+			  title="Start Interval"
 			  color="#841584"
 			/>
-
+			<Ingest />
 		  </View>
 		);
 	}

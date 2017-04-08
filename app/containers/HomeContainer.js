@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import Home from '../components/Home.js';
 
 import {
-    increment
+    increment,
+    interval
 } from '../actions';
 
 import {
@@ -14,5 +15,6 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, {
-    increment
+    increment,
+    interval
 })(Home);
