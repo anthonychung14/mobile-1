@@ -1,8 +1,13 @@
 //@flow
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-
-import Ingest from './Ingest';
+import {
+	StyleSheet,
+	Text,
+	View,
+	Button,
+	TouchableOpacity
+} from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 type Props = {
   increment: Function,
@@ -13,6 +18,13 @@ type Props = {
 export default class Home extends React.Component {
 	props: Props;
 
+	static renderNavigationBar(props) {
+		const NavBar = props.NavBar
+		return (
+			<NavBar />
+		);
+	}
+
 	state = {
 		count: 0
 	}
@@ -20,6 +32,7 @@ export default class Home extends React.Component {
 	inc = (e) => {
 		const nextState = { count: this.state.count + 1 };
 		this.setState(nextState);
+		this.props.increment();
 	}
 
 	interval = (e) => {
@@ -27,25 +40,24 @@ export default class Home extends React.Component {
 		this.props.interval();
 	}
 
+	navToIngest = () => Actions.pageTwo({ text: 'To page two' })
+
 	render() {
-		const { inc, interval } = this;
+		const { inc, interval, navToIngest } = this;
 		const { increment } = this.props;
 		return (
-		  <View style={styles.container}>
-			<Text>Shake your what to open the developer menu.</Text>
-			<Text>Number: { this.state.count }</Text>
-			<Button
-			  onPress={ increment }
-			  title="Stop Interval"
-			  color="#841584"
-			/>
-			<Button
-			  onPress={ interval }
-			  title="Start Interval"
-			  color="#841584"
-			/>
-			<Ingest />
-		  </View>
+			<View style={styles.container}>
+				<Button
+				  onPress={ increment }
+				  title="Stop Interval"
+				  color="#841584"
+				/>
+				<Button
+				  onPress={ interval }
+				  title="Start Interval"
+				  color="#841584"
+				/>
+			</View>
 		);
 	}
 }
