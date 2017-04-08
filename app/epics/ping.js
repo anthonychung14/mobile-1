@@ -1,2 +1,3 @@
 export const pingEpic = action$ =>
-    console.log(action$) || action$
+    action$.ofType('PING')
+        .mapTo({ type: 'PONG' })

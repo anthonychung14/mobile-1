@@ -1,0 +1,1 @@
+export const interval = () => ({ type: 'INTERVAL' })
