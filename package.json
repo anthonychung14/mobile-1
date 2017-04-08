@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-native-scripts": "0.0.27",
+    "flow-bin": "^0.38.0",
     "jest-expo": "^0.3.0",
+    "react-native-scripts": "0.0.27",
     "react-test-renderer": "~15.4.1"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
@@ -12,6 +13,7 @@
     "start": "react-native-scripts start",
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
+    "flow": "flow",
     "ios": "react-native-scripts ios",
     "test": "node node_modules/jest/bin/jest.js --watch"
   },
@@ -20,7 +22,12 @@
   },
   "dependencies": {
     "expo": "^15.1.0",
+    "immutable": "^3.8.1",
     "react": "~15.4.0",
-    "react-native": "0.42.3"
+    "react-native": "0.42.3",
+    "react-redux": "^5.0.3",
+    "react-router": "^4.0.0",
+    "redux-observable": "^0.14.1",
+    "rxjs": "^5.3.0"
   }
 }
