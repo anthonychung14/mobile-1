@@ -23,14 +23,14 @@ export default class Ingest extends React.Component {
 	}
 
 	render() {
-		const { submitDatum } = this.props;
+		const { addItem } = this.props;
 		return (
 			<View style={ styles.container }>
 				<Text style={ styles.header }>
 					Create Card
 				</Text>
 				<IngestForm
-					submitDatum={ submitDatum }
+					addItem={ addItem }
 				/>
 			</View>
 		)

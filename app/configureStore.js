@@ -5,11 +5,14 @@ import { Platform } from 'react-native';
 
 import { createStore, applyMiddleware, compose } from 'redux';
 
-import { createEpicMiddleware } from 'redux-observable';
-import { rootEpic } from './epics';
 import thunk from 'redux-thunk';
+import { createEpicMiddleware } from 'redux-observable';
 
+import { rootEpic } from './epics';
 import { rootReducer }  from './reducers';
+
+import syncOffline from './store/syncOffline';
+import { syncFirebase } from './store/firebase';
 
 const epicMiddleware = createEpicMiddleware(rootEpic);
 let composeEnhancers = compose;
@@ -30,19 +33,22 @@ let composeEnhancers = compose;
 let reduxDevTools = window.devToolsExtension ? window.devToolsExtension() : (f) => f;
 
 const enhancer = composeEnhancers(
-    applyMiddleware(thunk),
-    applyMiddleware(epicMiddleware),
-    reduxDevTools
+	applyMiddleware(thunk),
+	applyMiddleware(epicMiddleware),
+	reduxDevTools
 );
 
 export default function configureStore(initialState) {
   const store = createStore(rootReducer, initialState, enhancer);
 
-    if (module.hot) {
-        module.hot.accept(() => {
-          store.replaceReducer(require('./reducers').default);
-        });
-    }
+	// syncOffline(store)
+	// syncFirebase(store)
+
+	if (module.hot) {
+		module.hot.accept(() => {
+		  store.replaceReducer(require('./reducers').default);
+		});
+	}
 
   return store;
 }

@@ -28,7 +28,9 @@ import {
     subjectOptions
 } from '../../constants/formOptions';
 
-class IngestForm extends React.Component {
+import UserInput from '../SignupLogin/UserInput';
+
+class SignupForm extends React.Component {
     props: Props;
 
     onSubmit = values => {
@@ -43,7 +45,7 @@ class IngestForm extends React.Component {
             <Form>
                 <FieldsContainer>
                     <Fieldset label="Data">
-                        <Input
+                        <UserInput
                             name="abstract"
                             label="Abstract"
                             placeholder="One sentence"
@@ -60,34 +62,6 @@ class IngestForm extends React.Component {
                         />
                     </Fieldset>
                 </FieldsContainer>
-                <FieldsContainer>
-                    <Fieldset label="Metadata">
-                        <Input
-                            name="title"
-                            label="Title"
-                            placeholder="Title"
-                        />
-                        <Input
-                            name="author"
-                            label="Author"
-                            placeholder="Author's name"
-                        />
-                        <Select
-                            name="source"
-                            label="Source"
-                            options={ sourceOptions }
-                            placeholder="Podcast"
-                          />
-                        <Select
-                            name="subject"
-                            label="Subject"
-                            options={ subjectOptions }
-                            placeholder="Technology"
-                        />
-                    </Fieldset>
-                </FieldsContainer>
-
-
                 <ActionsContainer>
                     <Button
                         icon="md-checkmark"
@@ -105,7 +79,7 @@ class IngestForm extends React.Component {
 }
 
 export default reduxForm({
-  form: 'ingest'
+  form: 'signup'
 })(IngestForm)
 
 const styles = StyleSheet.create({
