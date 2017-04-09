@@ -25,8 +25,10 @@
     "immutable": "^3.8.1",
     "react": "~15.4.0",
     "react-native": "0.42.3",
+    "react-native-clean-form": "^0.1.0",
     "react-native-local-mongodb": "^1.8.2",
     "react-native-router-flux": "^3.38.0",
+    "react-native-vector-icons": "^4.0.1",
     "react-redux": "^5.0.3",
     "react-router": "^4.0.0",
     "redux-form": "^6.6.2",
@@ -34,6 +36,7 @@
     "redux-saga": "^0.14.6",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.0",
-    "rxjs": "^5.3.0"
+    "rxjs": "^5.3.0",
+    "uuid-v4": "^0.1.0"
   }
 }

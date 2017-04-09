@@ -17,11 +17,11 @@ export default class Entry extends React.Component {
                         key="pageOne"
                         component={ HomeContainer }
                         title="Home"
-                        initial={ "true" }
                         NavBar={ NavBar }
                     />
                     <Scene
                         key="pageTwo"
+                        initial={ "true" }
                         component={ IngestContainer }
                         title="Ingest"
                         NavBar={ NavBar }
