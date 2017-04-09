@@ -16,7 +16,7 @@ export default class Entry extends React.Component {
                 <Scene key="root">
                     <Scene
                         key="pageOne"
-                        component={ LoginContainer }
+                        component={ HomeContainer }
                         title="Home"
                         NavBar={ NavBar }
                     />

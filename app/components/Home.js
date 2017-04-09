@@ -40,22 +40,28 @@ export default class Home extends React.Component {
 		this.props.interval();
 	}
 
+
 	navToIngest = () => Actions.pageTwo({ text: 'To page two' })
 
 	render() {
-		const { inc, interval, navToIngest } = this;
+		const { inc, interval, addItem } = this;
 		const { increment } = this.props;
 		return (
 			<View style={styles.container}>
 				<Button
-				  onPress={ increment }
-				  title="Stop Interval"
-				  color="#841584"
+					onPress={ interval }
+					title="Start Interval"
+					color="#841584"
 				/>
 				<Button
-				  onPress={ interval }
-				  title="Start Interval"
-				  color="#841584"
+					onPress={ increment }
+					title="Stop Interval"
+					color="#841584"
+				/>
+				<Button
+					onPress={ addItem }
+					title="Add Item Stream"
+					color="blue"
 				/>
 			</View>
 		);

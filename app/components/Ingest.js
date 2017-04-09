@@ -22,6 +22,11 @@ export default class Ingest extends React.Component {
 		);
 	}
 
+	addItem = () => {
+		console.log('--------- ADD ITEM START --------');
+		this.props.addItem();
+	}
+
 	render() {
 		const { addItem } = this.props;
 		return (

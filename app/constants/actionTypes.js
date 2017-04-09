@@ -1,19 +1,22 @@
 const actionTypes = Object.freeze({
     item: {
-        add: 'actionTypes/ITEM/ADD',
-        delete: 'actionTypes/ITEM/DELETE',
-        modify: 'actionTypes/ITEM/MODIFY',
+        ADD: 'actionTypes/item/ADD',
+        DELETE: 'actionTypes/item/DELETE',
+        SUCCESS: 'actionTypes/item/SUCCESS',
+        MODIFY: 'actionTypes/item/MODIFY',
     },
     user: {
-        signup: 'actionTypes/USER/SIGNUP',
-        login: 'actionTypes/USER/LOGIN',
-        request: 'actionTypes/USER/REQUEST'
+        SIGNUP: 'actionTypes/user/SIGNUP',
+        LOGIN: 'actionTypes/user/LOGIN',
+        REQUEST: 'actionTypes/user/REQUEST'
     },
     connection: {
-        checked: 'actionTypes/CONNECTION/CHECKED',
-        checking: 'actionTypes/CONNECTION/CHECKING'
-        offline: 'actionTypes/CONNECTION/OFFLINE'
-        online: 'actionTypes/CONNECTION/ONLINE'
-        offline_loaded: 'actionTypes/CONNECTION/OFFLINE_LOADED'
+        CHECKED: 'actionTypes/connection/CHECKED',
+        CHECKING: 'actionTypes/connection/CHECKING',
+        OFFLINE: 'actionTypes/connection/OFFLINE',
+        ONLINE: 'actionTypes/connection/ONLINE',
+        OFFLINE_LOADED: 'actionTypes/connection/OFFLINE_LOADED'
     }
-})
+});
+
+export default actionTypes;
