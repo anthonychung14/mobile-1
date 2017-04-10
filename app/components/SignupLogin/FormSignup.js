@@ -21,11 +21,11 @@ const FormSignup = props => {
     } = props;
 
     const _onChangeEmailSignup = value => {
-        actions.changeEmailSignup(value);
+        this.props.changeEmailSignup(value);
     };
 
     const _onChangePasswordSignup = value => {
-        actions.changePasswordSignup(value);
+        this.props.changePasswordSignup(value);
     };
 
     return (

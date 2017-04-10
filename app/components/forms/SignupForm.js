@@ -30,6 +30,9 @@ import {
 
 import UserInput from '../SignupLogin/UserInput';
 
+import usernameImg from '../../icons/username.png';
+import passwordImg from '../../icons/password.png';
+
 class SignupForm extends React.Component {
     props: Props;
 
@@ -45,20 +48,16 @@ class SignupForm extends React.Component {
             <Form>
                 <FieldsContainer>
                     <Fieldset label="Data">
-                        <UserInput
-                            name="abstract"
-                            label="Abstract"
-                            placeholder="One sentence"
+                        <Input
+                            name="email"
+                            label="Email"
+                            placeholder="anthonychung14@gmail.com"
                         />
                         <Input
-                            name="summary"
-                            label="Summary"
-                            placeholder="Long form"
-                        />
-                        <Input
-                            name="quotation"
-                            label="Quotation"
-                            placeholder="Copy pasta"
+                            name="password"
+                            label="Password"
+                            secureTextEntry={ true }
+                            placeholder="Your password here"
                         />
                     </Fieldset>
                 </FieldsContainer>
@@ -80,10 +79,12 @@ class SignupForm extends React.Component {
 
 export default reduxForm({
   form: 'signup'
-})(IngestForm)
+})(SignupForm)
 
 const styles = StyleSheet.create({
     formContainer: {
+        flex: 1,
+        alignItems: 'center',
         margin: '10%'
     },
 });

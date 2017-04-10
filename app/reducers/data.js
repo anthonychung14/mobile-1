@@ -9,7 +9,6 @@ function addDatum(state, payload) {
 
 function incrementCardCount(state, payload) {
     const count = state.get('count', 0);
-    console.log(count, 'num cards counted');
     return state.set('count', count + 1);
 }
 
