@@ -34,9 +34,6 @@ export default class NavBar extends React.Component {
                 <TouchableOpacity onPress={ navToDigest } >
                     <Text style={styles.button}>Digest</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={ navToTest } >
-                    <Text style={styles.button}>Test</Text>
-                </TouchableOpacity>
             </View>
         );
     }
@@ -46,13 +43,8 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         justifyContent: 'space-around',
-        height: '10%',
-        backgroundColor: 'blue',
-        alignItems: 'center',
-        justifyContent: 'center',
+        height: '7%',
+        backgroundColor: '#65737e',
+        paddingTop: '3%',
     },
-    button: {
-        padding: '5%',
-        margin: '1%'
-    }
 });

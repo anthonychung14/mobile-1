@@ -5,7 +5,7 @@ import Home from '../components/Home.js';
 
 import {
     increment,
-    interval
+    interval,
 } from '../actions';
 
 import {

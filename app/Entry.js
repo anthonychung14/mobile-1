@@ -5,6 +5,7 @@ import HomeContainer from './containers/HomeContainer.js';
 import IngestContainer from './containers/IngestContainer.js';
 import DigestContainer from './containers/DigestContainer.js';
 import TestContainer from './containers/TestContainer.js';
+import LoginContainer from './containers/LoginContainer.js';
 
 import NavBar from './components/NavBar.js';
 
@@ -15,13 +16,13 @@ export default class Entry extends React.Component {
                 <Scene key="root">
                     <Scene
                         key="pageOne"
-                        component={ HomeContainer }
+                        component={ LoginContainer }
                         title="Home"
-                        initial={ "true" }
                         NavBar={ NavBar }
                     />
                     <Scene
                         key="pageTwo"
+                        initial={ "true" }
                         component={ IngestContainer }
                         title="Ingest"
                         NavBar={ NavBar }

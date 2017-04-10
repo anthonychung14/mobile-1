@@ -6,8 +6,11 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
+
 import { Actions } from 'react-native-router-flux';
 import { reduxForm } from 'redux-form'
+
+import IngestForm from './forms/IngestForm';
 
 export default class Ingest extends React.Component {
 	props: Props;
@@ -19,56 +22,36 @@ export default class Ingest extends React.Component {
 		);
 	}
 
-	submit = values => {
-		console.log('submitting form', values)
-		this.props.increment();
-	  	Actions.pageThree({ text: 'To page two' });
+	addItem = () => {
+		console.log('--------- ADD ITEM START --------');
+		this.props.addItem();
 	}
 
 	render() {
-		const { handleSubmit } = this.props;
+		const { addItem } = this.props;
 		return (
-			<View style={styles.container}>
-				<Text>Title</Text>
-				<TextInput style={styles.input} />
-				<TouchableOpacity>
-					<Text
-						style={styles.button}
-						onPress={ this.submit }>
-							Submit
-					</Text>
-				</TouchableOpacity>
+			<View style={ styles.container }>
+				<Text style={ styles.header }>
+					Create Card
+				</Text>
+				<IngestForm
+					addItem={ addItem }
+				/>
 			</View>
 		)
 	}
 }
 
-// export default reduxForm({
-//   form: 'test'
-// })(Ingest)
-
 const styles = StyleSheet.create({
-	button: {
-		backgroundColor: 'blue',
-		color: 'white',
-		height: 30,
-		lineHeight: 30,
-		marginTop: 10,
+	header: {
+		fontSize: 25,
 		textAlign: 'center',
-		width: 250
-	  },
+	},
 	container: {
 		flex: 1,
+		justifyContent: 'space-around',
+		flexDirection: 'column',
+		marginTop: '10%',
 		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
 	},
-	input: {
-		borderColor: 'black',
-		borderWidth: 1,
-		height: 37,
-		width: 250,
-		justifyContent: 'center',
-		alignItems: 'center'
-	}
-})
+});
