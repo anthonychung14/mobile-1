@@ -27,6 +27,7 @@
     "react": "~15.4.0",
     "react-native": "0.42.3",
     "react-native-clean-form": "^0.1.0",
+    "react-native-firestack": "^2.3.9",
     "react-native-local-mongodb": "^1.8.2",
     "react-native-router-flux": "^3.38.0",
     "react-native-simple-store": "^1.1.0",

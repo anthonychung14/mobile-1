@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import { itemsRef } from '../../store/firebase';
+import { dataRef } from '../../store/firebase';
 import Dimensions from 'Dimensions';
 import {
     StyleSheet,
@@ -59,8 +59,8 @@ export default class ButtonSignup extends Component {
 
         userSignup
             .then(snapshot => {
-                const usersRef = itemsRef.child('users');
-                const todosRef = itemsRef.child('todos');
+                const usersRef = dataRef.child('users');
+                const todosRef = dataRef.child('todos');
                 const todo = {
                     isDone: false,
                     isStarred: false,

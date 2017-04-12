@@ -1,4 +1,11 @@
 import { API } from './urls';
+import { dataRef } from '../store/firebase';
+
+export const postData = (data) =>
+    dataRef.push(data)
+        .then(response => response.json())
+        .catch(err => console.log(err))
+
 
 export const fetchData = (options) =>
     fetch(API, baseRequest(options))

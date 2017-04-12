@@ -18,17 +18,18 @@ export function goOffline() {
  	}
 }
 
-function offlineItemsLoaded(items) {
+function offlineItemsLoaded(data) {
 	return {
 		type: OFFLINE_ITEMS_LOADED,
-		items: items
+		data: data
   	}
 }
 
 export function loadOfflineItems() {
 	return dispatch => {
-		offline.get('items').then(items => {
-		  dispatch(offlineItemsLoaded(items || []))
+		offline.get('data').then(data => {
+		  console.log(data, 'DATA BISH');
+		  dispatch(offlineItemsLoaded(data || []))
 		})
 	}
 }

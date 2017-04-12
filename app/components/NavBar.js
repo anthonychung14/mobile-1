@@ -10,9 +10,6 @@ import {
 
 import { Actions } from 'react-native-router-flux';
 
-type Props = {
-};
-
 export default class NavBar extends React.Component {
     props: Props;
 

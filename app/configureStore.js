@@ -2,6 +2,7 @@
 
 import Immutable from 'immutable';
 import { Platform } from 'react-native';
+// import Firestack, { FirestackModule } from 'react-native-firestack'
 
 import { createStore, applyMiddleware, compose } from 'redux';
 
@@ -38,11 +39,13 @@ const enhancer = composeEnhancers(
 	reduxDevTools
 );
 
-export default function configureStore(initialState) {
-  const store = createStore(rootReducer, initialState, enhancer);
+// export const inst = new FirestackModule('items', { firestack });
 
-	// syncOffline(store)
-	// syncFirebase(store)
+export default function configureStore(initialState) {
+	const store = createStore(rootReducer, initialState, enhancer);
+
+ 	syncOffline(store)
+  	syncFirebase(store)
 
 	if (module.hot) {
 		module.hot.accept(() => {

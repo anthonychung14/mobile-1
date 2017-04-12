@@ -14,3 +14,4 @@ export const intervalEpic = (action$, store) =>
                 .map(x => ({ type: 'UPDATE_DATA', payload: x }))
                 .takeUntil(action$.ofType('INCREMENT'))
         );
+

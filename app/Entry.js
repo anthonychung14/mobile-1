@@ -10,13 +10,14 @@ import LoginContainer from './containers/LoginContainer.js';
 import NavBar from './components/NavBar.js';
 
 export default class Entry extends React.Component {
+
     render() {
         return (
             <Router>
                 <Scene key="root">
                     <Scene
                         key="pageOne"
-                        component={ LoginContainer }
+                        component={ HomeContainer }
                         title="Home"
                         NavBar={ NavBar }
                     />
