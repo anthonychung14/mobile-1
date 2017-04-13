@@ -1,6 +1,10 @@
 import { Observable } from 'rxjs/Observable';
 import { fetchData } from '../constants/api';
 
+export const pingEpic = action$ =>
+    action$.ofType('PING')
+        .mapTo({ type: 'PONG' })
+
 const source = Observable
     .interval(1000)
     .do(x => console.log('intervaling'))
