@@ -8,7 +8,11 @@ import Entry from './app/Entry.js'
 const store = configureStore();
 
 export default class App extends React.Component {
-	render() {
+	// componentWillMount() {
+ //        inst.listen();
+ //    }
+
+    render() {
 		return (
             <Provider store={ store }>
                 <Entry />

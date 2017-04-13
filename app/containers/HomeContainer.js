@@ -6,6 +6,7 @@ import Home from '../components/Home.js';
 import {
     increment,
     interval,
+    addItem
 } from '../actions';
 
 import {
@@ -16,5 +17,6 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, {
     increment,
-    interval
+    interval,
+    addItem
 })(Home);

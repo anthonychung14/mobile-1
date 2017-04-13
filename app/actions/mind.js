@@ -10,7 +10,7 @@ export const addItem = values => {
 }
 
 export function deleteItem(id) {
-    itemsRef.child(id).remove()
+    dataRef.child(id).remove()
 
     return {
         type: actionTypes.item.DELETE

@@ -12,19 +12,23 @@ const _config = {
 
 const firebaseApp = initializeApp(_config);
 
-export const itemsRef = firebaseApp.database().ref('items');
+export const dataRef = firebaseApp.database().ref('data');
 const connectedRef = firebaseApp.database().ref('.info/connected');
 
 export function syncFirebase(store) {
-	itemsRef.on('child_added', (snapshot) => {
-		store.dispatch(addItemSuccess(snapshot.val()))
+	dataRef.on('child_added', (snapshot) => {
+		console.log('fuck yeah a child was added', snapshot);
+		// ultimately this will probably do something else
+		// or you can make firebase into a stream EYYYYY
+		// store.dispatch(addItemSuccess(snapshot.val()))
 	});
 
-	itemsRef.on('child_removed', (snapshot) => {
+	dataRef.on('child_removed', (snapshot) => {
 		store.dispatch(removeItemSuccess(snapshot.val().id))
 	});
 
 	connectedRef.on('value', snap => {
+		console.log('connected ref value', snap);
 		if (snap.val() === true) {
 			store.dispatch(goOnline());
 

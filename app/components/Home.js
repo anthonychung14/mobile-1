@@ -11,6 +11,7 @@ import { Actions } from 'react-native-router-flux';
 
 type Props = {
   increment: Function,
+  addItem: Function,
   interval: Function,
   count: number,
 };
