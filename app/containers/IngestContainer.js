@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Ingest from '../components/Ingest.js';
 
 import {
-    addItem,
+    addData,
 } from '../actions';
 
 import {
@@ -14,5 +14,5 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, {
-    addItem,
+    addData,
 })(Ingest);

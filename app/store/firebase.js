@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase";
-import { addItemSuccess, removeItemSuccess, goOnline, goOffline } from '../actions/firebase';
+import { addDataSuccess, removeItemSuccess, goOnline, goOffline } from '../actions/firebase';
 
 const _config = {
 	apiKey: "AIzaSyDMJte-Wd7gFXk2Awi9H4kJ4ah6BnI21Sw",
@@ -13,14 +13,15 @@ const _config = {
 const firebaseApp = initializeApp(_config);
 
 export const dataRef = firebaseApp.database().ref('data');
+export const sessionRef = firebaseApp.database().ref('card-sessions');
 const connectedRef = firebaseApp.database().ref('.info/connected');
 
 export function syncFirebase(store) {
 	dataRef.on('child_added', (snapshot) => {
-		console.log('fuck yeah a child was added', snapshot);
+		console.log('child added to store', snapshot);
 		// ultimately this will probably do something else
 		// or you can make firebase into a stream EYYYYY
-		// store.dispatch(addItemSuccess(snapshot.val()))
+		// store.dispatch(addDataSuccess(snapshot.val()))
 	});
 
 	dataRef.on('child_removed', (snapshot) => {

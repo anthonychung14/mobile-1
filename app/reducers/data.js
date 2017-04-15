@@ -13,12 +13,12 @@ function incrementCardCount(state, payload) {
 }
 
 export default function data(state: Map<*, *> = Map(), action) {
-    console.log(action.type, action.payload, '------- STATE ----- ')
+    console.log(action.type, action.payload, '------- STATE ----- ');
 
     switch (action.type) {
-        case actionTypes.item.ADD:
+        case actionTypes.data.ADD:
             return addDatum(state, action.payload);
-        case actionTypes.item.SUCCESS:
+        case actionTypes.data.SUCCESS:
             return incrementCardCount(state, action.payload)
         default:
             return state;

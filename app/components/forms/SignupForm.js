@@ -38,7 +38,7 @@ class SignupForm extends React.Component {
 
     onSubmit = values => {
         console.log('submitting form', values.toJS())
-        this.props.addItem()
+        this.props.addData()
     }
 
     render() {
