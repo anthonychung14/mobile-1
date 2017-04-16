@@ -5,10 +5,7 @@ import actionTypes from '../constants/actionTypes';
 import { postSession } from '../constants/api';
 
 // export const createSession = createAction(actionTypes.session.CREATE);
-export const createSession = () => {
-    console.log('jesus where is this session');
-    return ({ type: actionTypes.session.CREATE });
-}
+export const createSession = () => ({ type: actionTypes.session.CREATE });
 export const createSessionEpic = (action$, store) => {
     console.log(action$, store, 'createSessionEpic args');
     return action$.ofType(actionTypes.session.CREATE)

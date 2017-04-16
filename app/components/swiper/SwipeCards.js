@@ -212,7 +212,8 @@ export default class SwipeCards extends Component {
 
         const hasSwipedHorizontally = Math.abs(this.state.pan.x._value) > SWIPE_THRESHOLD;
         const hasSwipedVertically = Math.abs(this.state.pan.y._value) > SWIPE_THRESHOLD;
-        if (hasSwipedHorizontally || (hasSwipedVertically && this.props.upSwipeAction)) {
+        console.log(this.state.pan.y._value, 'num', SWIPE_THRESHOLD, 'thresh');
+        if (hasSwipedHorizontally || hasSwipedVertically) {
 
           let cancelled = false;
 
@@ -220,6 +221,8 @@ export default class SwipeCards extends Component {
           const hasMovedLeft = hasSwipedHorizontally && this.state.pan.x._value < 0;
           const hasMovedUp = hasSwipedVertically && this.state.pan.y._value < 0;
           const hasMovedDown = hasSwipedVertically && this.state.pan.y_value > 0;
+
+          console.log(hasMovedUp, 'has it moved up or nah')
 
           if (hasMovedRight) {
             cancelled = this.props.handleSwipeRight(this.state.card);

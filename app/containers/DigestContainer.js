@@ -11,12 +11,11 @@ import {
 } from '../epics/sessionEpic';
 
 import {
-
-
+    getCardsForSession
 } from '../selectors';
 
 const mapStateToProps = (state) => ({
-
+    cards: getCardsForSession(state)
 });
 
 export default connect(mapStateToProps, {

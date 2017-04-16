@@ -7,7 +7,7 @@ export const postData = (data) =>
         .catch(err => console.log(err))
 
 export const postSession = (data) =>
-    dataRef.push(data)
+    sessionRef.push(data)
         .then(response => response.json())
         .catch(err => console.log(err))
 

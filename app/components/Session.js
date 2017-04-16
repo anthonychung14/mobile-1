@@ -32,16 +32,12 @@ export default class Session extends React.Component {
         return (
             <View style={ styles.container } >
                 <Button
-                    icon="pencil"
-                    iconPlacement="center"
                     onPress={ createSession }
                 >
-                Submit
+                Con-Text
                 </Button>
                 <DigestContainer style={ styles.deck }/>
                 <Button
-                    icon="open-book"
-                    iconPlacement="center"
                     onPress={ createSession }
                 >
                 Submit
@@ -54,8 +50,8 @@ export default class Session extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'space-around',
-        backgroundColor: 'black',
+        justifyContent: 'space-between',
+        backgroundColor: 'white',
     },
 
 });
