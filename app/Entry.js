@@ -1,11 +1,9 @@
 import React from 'react';
 import { Router, Scene } from 'react-native-router-flux';
 
-import HomeContainer from './containers/HomeContainer.js';
 import IngestContainer from './containers/IngestContainer.js';
-import DigestContainer from './containers/DigestContainer.js';
-import TestContainer from './containers/TestContainer.js';
-import LoginContainer from './containers/LoginContainer.js';
+import SessionContainer from './containers/SessionContainer.js';
+import SignUpView from './components/signup/SignUpView.js';
 
 import NavBar from './components/NavBar.js';
 
@@ -17,26 +15,26 @@ export default class Entry extends React.Component {
                 <Scene key="root">
                     <Scene
                         key="pageOne"
-                        component={ HomeContainer }
+                        component={ SessionContainer }
+                        initial={ "true" }
                         title="Home"
                         NavBar={ NavBar }
                     />
                     <Scene
                         key="pageTwo"
-                        initial={ "true" }
                         component={ IngestContainer }
                         title="Ingest"
                         NavBar={ NavBar }
                     />
                     <Scene
                         key="pageThree"
-                        component={ DigestContainer }
+                        component={ SessionContainer }
                         title="Digest"
                         NavBar={ NavBar }
                     />
                     <Scene
                         key="pageFour"
-                        component={ TestContainer }
+                        component={ SessionContainer }
                         title="Digest"
                         NavBar={ NavBar }
                     />

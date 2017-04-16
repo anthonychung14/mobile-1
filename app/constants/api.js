@@ -1,11 +1,15 @@
 import { API } from './urls';
-import { dataRef } from '../store/firebase';
+import { dataRef, sessionRef } from '../store/firebase';
 
 export const postData = (data) =>
     dataRef.push(data)
         .then(response => response.json())
         .catch(err => console.log(err))
 
+export const postSession = (data) =>
+    sessionRef.push(data)
+        .then(response => response.json())
+        .catch(err => console.log(err))
 
 export const fetchData = (options) =>
     fetch(API, baseRequest(options))

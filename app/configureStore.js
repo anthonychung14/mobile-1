@@ -2,14 +2,12 @@
 
 import Immutable from 'immutable';
 import { Platform } from 'react-native';
-// import Firestack, { FirestackModule } from 'react-native-firestack'
-
 import { createStore, applyMiddleware, compose } from 'redux';
 
 import thunk from 'redux-thunk';
 import { createEpicMiddleware } from 'redux-observable';
 
-import { rootEpic } from './epics';
+import rootEpic from './epics/rootEpic';
 import { rootReducer }  from './reducers';
 
 import syncOffline from './store/syncOffline';

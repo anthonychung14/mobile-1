@@ -32,7 +32,7 @@ class IngestForm extends React.Component {
     props: Props;
 
     onSubmit = values => {
-        this.props.addItem(values)
+        this.props.addData(values)
     };
 
     render() {

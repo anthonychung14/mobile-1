@@ -22,20 +22,20 @@ export default class Ingest extends React.Component {
 		);
 	}
 
-	addItem = () => {
+	addData = () => {
 		console.log('--------- ADD ITEM START --------');
-		this.props.addItem();
+		this.props.addData();
 	}
 
 	render() {
-		const { addItem } = this.props;
+		const { addData } = this.props;
 		return (
 			<View style={ styles.container }>
 				<Text style={ styles.header }>
 					Create Card
 				</Text>
 				<IngestForm
-					addItem={ addItem }
+					addData={ addData }
 				/>
 			</View>
 		)

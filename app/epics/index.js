@@ -1,7 +1,2 @@
-import { combineEpics } from 'redux-observable';
-
-import dataEpic from './data';
-
-export const rootEpic = combineEpics(
-  dataEpic
-);
+export * from './dataEpic';
+export * from './sessionEpic';

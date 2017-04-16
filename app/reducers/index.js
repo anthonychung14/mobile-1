@@ -3,14 +3,14 @@ import { Map } from 'immutable';
 
 import { combineReducers } from 'redux';
 import { reducer as form } from 'redux-form/immutable'
-import count from './count';
+
 import data from './data';
+import cards from './cards';
 
 export const rootReducer = (state: ReduxState = Map(), action: ReduxAction) => {
     return Map({
         data: data(state.get('data'), action),
-        count: count(state.get('count'), action),
         form: form(state.get('form'), action),
-        // inst: inst.reducer
+        cards: cards(state.get('cards'), action)
     });
 };

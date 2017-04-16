@@ -1,22 +1,25 @@
 // @flow
 import { connect } from 'react-redux';
 
-import Home from '../components/Home.js';
+import Session from '../components/Session.js';
 
 import {
-    increment,
-    interval,
-    addItem
+
 } from '../actions';
 
 import {
+    createSession
+} from '../epics/sessionEpic';
+
+import {
+
+
 } from '../selectors';
 
 const mapStateToProps = (state) => ({
+
 });
 
 export default connect(mapStateToProps, {
-    increment,
-    interval,
-    addItem
-})(Home);
+    createSession
+})(Session);

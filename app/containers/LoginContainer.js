@@ -1,16 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import Signup from '../components/SignupLogin/Signup';
-import HomeContainer from './HomeContainer';
-
 class SignupScreen extends Component {
 	render() {
-		if (this.props.userData) {
-			return <HomeContainer />;
-		}
-
-		return <Signup />;
+		return null;
 	}
 }
 

@@ -1,5 +1,13 @@
 const actionTypes = Object.freeze({
-    item: {
+    session: {
+        CREATE: 'actionTypes/session/CREATE',
+        RETRIEVE_CARDS: 'actionTypes/session/RETRIEVE_CARDS',
+        UP_SWIPE: 'actionTypes/session/UP_SWIPE',
+        LEFT_SWIPE: 'actionTypes/session/LEFT_SWIPE',
+        RIGHT_SWIPE: 'actionTypes/session/RIGHT_SWIPE',
+        DOWN_SWIPE: 'actionTypes/session/DOWN_SWIPE',
+    },
+    data: {
         ADD: 'actionTypes/item/ADD',
         DELETE: 'actionTypes/item/DELETE',
         SUCCESS: 'actionTypes/item/SUCCESS',
